@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import api from '../../services/api';
 import './styles.css'
 
 export default function Filme() {
 
   const { id } = useParams();
-  const [dados, setDados] = useState({})
+  const [dados, setDados] = useState({});
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => { api.get(`/movie/${id}`,{
     params:{
@@ -18,9 +19,11 @@ export default function Filme() {
     setDados(response.data);
     setLoading(false);
   }).catch(()=>{
-    console.log("Filme não encontrado")
+    console.log("Filme não encontrado");
+    navigate("/", { replace: true});
+    return;
   })
-  }, []);
+  }, [navigate, id]);
   
 
   if(loading){
@@ -42,7 +45,7 @@ export default function Filme() {
       <div className='Buttons'>
         <button>Salvar</button>
         <button>
-          <a href='#'>
+          <a href={`https://youtube.com/results?search_query=${dados.title} Trailer`} target='blank'>
             Trailer
           </a>
         </button>

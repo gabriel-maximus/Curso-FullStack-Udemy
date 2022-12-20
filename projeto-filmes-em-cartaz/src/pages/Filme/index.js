@@ -25,6 +25,23 @@ export default function Filme() {
   })
   }, [navigate, id]);
   
+  function salvarFilme(){
+    const minhaLista = localStorage.getItem("@filmes")
+
+    let filmesSalvos = JSON.parse(minhaLista) || [];
+
+    const hasFilmes = filmesSalvos.some((filmeSalvo)=> filmeSalvo.id === dados.id );
+
+    if(hasFilmes){
+      alert("Esse filme já está na lista");
+      return;
+    }
+
+    filmesSalvos.push(dados);
+    localStorage.setItem("@filmes", JSON.stringify(filmesSalvos));
+    alert("Filme salvo com sucesso"); 
+
+  }
 
   if(loading){
     return(
@@ -43,7 +60,7 @@ export default function Filme() {
       <strong>Avaliação: {dados.vote_average}/10</strong>
 
       <div className='Buttons'>
-        <button>Salvar</button>
+        <button onClick={salvarFilme}>Salvar</button>
         <button>
           <a href={`https://youtube.com/results?search_query=${dados.title} Trailer`} target='blank'>
             Trailer

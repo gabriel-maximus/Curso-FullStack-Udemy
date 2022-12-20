@@ -1,0 +1,38 @@
+.Meus-Filmes{
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Meus-Filmes h1{
+    margin-bottom: 14px;
+}
+
+.Meus-Filmes span{
+    font-size: 18px;
+}
+
+.Meus-Filmes ul{
+    width: 720px;
+}
+
+.Meus-Filmes ul li{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.Meus-Filmes div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Meus-Filmes div a{
+    text-decoration: none;
+    color: #116feb;
+    margin-right: 14px;
+}

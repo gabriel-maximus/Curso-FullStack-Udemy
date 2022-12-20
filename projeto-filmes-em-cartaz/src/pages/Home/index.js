@@ -44,6 +44,7 @@ export default function Home() {
               <strong>{filme.title}</strong>
               <img src={`https://image.tmdb.org/t/p/original/${filme.poster_path}`} alt={`Poster do filme ${filme.title}`} />
               <Link to={`/filme/${filme.id}`}>Acessar</Link>
+              <hr />
             </article>
           )
         })}

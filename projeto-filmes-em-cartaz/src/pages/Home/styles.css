@@ -5,7 +5,7 @@
 
 .Lista article{
     width: 100%;
-    background-color: #fff;
+    background-color: #141414;
     padding: 15px;
     border-radius: 4px;
 }
@@ -33,9 +33,9 @@
     justify-content: center;
     padding: 10px 0;
     font-size: 24px;
-    background-color: #116Feb;
+    background-color: #000;
     text-decoration: none;
-    color: #fff;
+    color: #E50914;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
 
@@ -46,4 +46,10 @@
    justify-content: center;
    align-items: center;
    margin-top: 14px; 
+}
+
+hr{
+    width: 100%;
+    margin-top: 14px;
+    margin-bottom: 14px;
 }

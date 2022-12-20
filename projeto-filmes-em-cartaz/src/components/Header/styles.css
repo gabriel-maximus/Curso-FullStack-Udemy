@@ -11,15 +11,16 @@ header{
     text-decoration: none;
     font-size: 30px;
     cursor: pointer;
-    color: #fff;
+    color: #E50914;
     font-weight: bold;
 }
 
 .Favoritos{
     cursor: pointer;
-    background-color: #fff;
+    background-color: #E50914;
     padding: 5px 14px;
     text-decoration: none;
     color: #000000;
     border-radius: 4px;
+    font-weight: bold;
 }

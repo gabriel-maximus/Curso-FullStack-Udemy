@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify';
 import api from '../../services/api';
 import './styles.css'
 
@@ -33,13 +34,13 @@ export default function Filme() {
     const hasFilmes = filmesSalvos.some((filmeSalvo)=> filmeSalvo.id === dados.id );
 
     if(hasFilmes){
-      alert("Esse filme já está na lista");
+      toast.warn("Esse filme já está na lista!");
       return;
     }
 
     filmesSalvos.push(dados);
     localStorage.setItem("@filmes", JSON.stringify(filmesSalvos));
-    alert("Filme salvo com sucesso"); 
+    toast.success("Filme salvo com sucesso!"); 
 
   }
 

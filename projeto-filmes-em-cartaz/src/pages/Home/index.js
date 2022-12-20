@@ -5,6 +5,7 @@ import './styles.css'
 
 export default function Home() {
   const [filmes, setFilmes] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     
@@ -18,13 +19,21 @@ export default function Home() {
       })
 
       //console.log(response.data.results.slice(0,10));
-      setFilmes(response.data.results.slice(0,10))
+      setFilmes(response.data.results.slice(0,10));
+      setLoading(false);
     }
 
     loadFilmes();
 
   }, [])
-  
+
+  if(loading === true){
+    return(
+      <div className='Loading'>
+        <h2>Carregando Filmes...</h2>
+      </div>
+    )
+  }
 
   return (
     <div className='Container'>

@@ -40,3 +40,10 @@
     border-bottom-right-radius: 8px;
 
 }
+
+.Loading{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 14px; 
+}
